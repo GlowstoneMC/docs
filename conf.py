@@ -24,7 +24,7 @@ copyright = '2018, The Glowstone Project'
 author = 'The Glowstone Project'
 
 # The short X.Y version
-version = ''
+version = '2018.4'
 # The full version, including alpha/beta/rc tags
 release = '2018.4.0'
 
