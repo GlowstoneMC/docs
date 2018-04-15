@@ -1,5 +1,5 @@
 Home
-*********************
+#######################
 
 Welcome to the Glowstone documentation!
 
@@ -22,7 +22,7 @@ Table of Contents
 ==================
 
 .. toctree::
-    :maxdepth: 3
-    :caption: Contents:
+    :maxdepth: 2
 
     Getting_Started/index
+    Why_Glowstone/index
