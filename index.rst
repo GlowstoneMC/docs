@@ -22,7 +22,7 @@ Table of Contents
 ==================
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Contents:
-   
-   Getting_Started/index
+    :maxdepth: 3
+    :caption: Contents:
+
+    Getting_Started/index

@@ -14,7 +14,7 @@ If you're running a Linux distro, look into installing Oracle Java through your 
 But, if you really don't want Oracle Java, you can use OpenJDK_.
 
 .. note::
-   
+
     **We require Java 8 update 101 or greater.**
 	
     Our Maven repository uses a Let's Encrypt HTTPS certificate, and Let's Encrypt was added to the Java truststore in update 101.
@@ -26,6 +26,7 @@ You should see something like :code:`java version "1.8.0_121"` at the top. As lo
 
 
 .. note::
+
     If you installed Java 8 on **macOS**, but :code:`java -version` is showing an older version, run
 	
     .. code-block:: sh
@@ -54,11 +55,11 @@ Install Glowstone
 Windows
 --------
 
-Using a text editor like Notepad, create a new start script named :code:`start.bat` to launch the jar file:  
+Using a text editor like Notepad, create a new start script named :code:`start.bat` to launch the jar file:
 
 .. code-block:: bat
 
-    @echo off  
+    @echo off
     java -Xms768M -XX:+UseG1GC -jar glowstone.jar
     pause
 
@@ -73,9 +74,9 @@ Using a text editor like gedit, mousepad, Atom, Sublime Text, nano, (Neo)vi(m), 
 
 .. code-block:: sh
 
-    #!/bin/sh  
-    BINDIR=$(dirname "$(readlink -fn "$0")")  
-    cd "$BINDIR"  
+    #!/bin/sh
+    BINDIR=$(dirname "$(readlink -fn "$0")")
+    cd "$BINDIR"
     java -Xms768M -XX:+UseG1GC -jar glowstone.jar
 
 Open terminal, go to your Glowstone folder and enter this command to give the script execute permissions:
@@ -99,7 +100,7 @@ Using a text editor like TextEdit, create a new start script named :code:`start.
 
 .. code-block:: sh
 
-    #!/bin/bash  
+    #!/bin/bash
     cd '$( dirname "$0" )'
     java -Xms768M -XX:+UseG1GC -jar glowstone.jar
 
@@ -109,7 +110,7 @@ At this point it should look like this:
 
 .. code-block:: sh
 
-    cd /Users/YourName/YourGlowstoneFolder/Glowstone  
+    cd /Users/YourName/YourGlowstoneFolder/Glowstone
 
 
 If you think that is correct press enter and move to the next step.
@@ -132,7 +133,7 @@ If you have any trouble setting up, we would be happy to help you on the forums_
 or Discord_. Otherwise, congratulations! You've just installed Glowstone!
 
 * If you can't access your server from your public IP, make sure you have `port forwarded`_ or used a UPnP port mapper to allow incoming connections to your server.
-* For server issues or suggestions, create an issue on Github.  
+* For server issues or suggestions, create an issue on Github.
 * By default, all configuration files are in the :code:`config` folder.
 
 .. _forums: https://forums.glowstone.net/
@@ -153,4 +154,3 @@ Most Bukkit_, Spigot_ and Paper_ plugins will work on Glowstone.
 .. _Bukkit: http://dev.bukkit.org/bukkit-plugins/
 .. _Spigot: https://www.spigotmc.org/resources/categories/bukkit.4/
 .. _Paper: https://aquifermc.org/resources/categories/server-plugins.2/
-
