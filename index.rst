@@ -26,3 +26,4 @@ Table of Contents
 
     Why_Glowstone/index
     Getting_Started/index
+    FAQ/index

@@ -84,3 +84,25 @@ changed in the server configuration. For more information, refer to the `Configu
     [INFO] Ready for connections.
 
 Once the "Ready for connections." line is output, your server should be reachable by clients.
+
+.. error::
+    :name: bind-fail-error
+
+    **Failed to bind to address. Maybe it is already in use?**
+
+    This error means that you've already got a server running on the port that you've configured.
+
+    When starting the server, please make sure you do so by following the methods in the installation instructions, instead of double-clicking the JAR.
+    If you do double-click the JAR, the server will start up, but you won't have any console,
+    so you'll have to kill it using the `task manager`_ or whatever process management tools are relevant to your system.
+
+    * If you're converting from Bukkit, make sure you've stopped the old Bukkit server, if you plan to use the same port.
+
+        * Make sure you're not running more than one copy of Glowstone on the same port.
+        * Check that you have no extra Java processes running. If you're on Windows, use the `Task Manager`_. You might not want to kill some of them, such as the Minecraft client.
+        * If this still isn't working, please check whether you have an :code:`ip` set in the :code:`server` section of your :code:`config/glowstone.yml` file.
+
+            * If you do, please consider that most people will not need this entry - it's only useful for people running large servers with multiple network cards. In the majority of cases, you can simply remove this line from your file.
+            * If you're convinced that you need it, it should contain only an IP address - usually of the form :code:`a.b.c.d`, from :code:`0.0.0.0` up to :code:`255.255.255.255` for IPv4.
+
+    .. _task manager: http://i.imgur.com/qWU4qVg.png
