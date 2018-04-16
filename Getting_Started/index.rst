@@ -11,6 +11,8 @@ Installing Glowstone is as easy as installing any other server software.
     install_java
     install_glowstone
     first_run
+    connect
+    basic_admin
     plugins
 
 
