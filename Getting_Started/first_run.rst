@@ -75,7 +75,7 @@ Server Binding
 --------------
 
 Once it is ready, the server will open itself on a TCP port. By default, this is port :code:`25565`, and can be
-changed in the server configuration. For more information, refer to the `Configuration Guide`_ section.
+changed in the server configuration. For more information, refer to the :doc:`../Configuration_Guide/index` section.
 
 .. code-block:: none
 
@@ -86,7 +86,6 @@ changed in the server configuration. For more information, refer to the `Configu
 Once the "Ready for connections." line is output, your server should be reachable by clients.
 
 .. error::
-    :name: bind-fail-error
 
     **Failed to bind to address. Maybe it is already in use?**
 

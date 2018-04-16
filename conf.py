@@ -40,6 +40,7 @@ release = '2018.4.0'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosectionlabel'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -157,3 +158,5 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+def setup(app):
+    app.add_stylesheet('glowstone.css')

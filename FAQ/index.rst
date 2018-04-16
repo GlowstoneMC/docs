@@ -54,9 +54,7 @@ Failed to bind to address. Maybe it is already in use?
 
 **This error means that you've already got a server running on the port that you've configured.**
 
-More information can be found in the "Server Binding" subsection inside the `First Run`_ section.
-
-.. _`First Run`: ../Getting_Started/first_run.html#bind-fail-error
+More information can be found in the :ref:`Server Binding` subsection inside the First Run section.
 
 Unsupported major.minor version
 -------------------------------
