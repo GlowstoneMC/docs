@@ -288,9 +288,11 @@ Each element of the library list (:code:`libraries.list` key) is an object with 
 +===============================================+====================+=============================================================+
 | group-id                                      | text               | The group ID of the library.                                |
 +-----------------------------------------------+--------------------+-------------------------------------------------------------+
-| idle-timeout                                  | text               | The artifact ID of the library.                             |
+| artifact-id                                   | text               | The artifact ID of the library.                             |
 +-----------------------------------------------+--------------------+-------------------------------------------------------------+
 | version                                       | text               | The version of the library.                                 |
++-----------------------------------------------+--------------------+-------------------------------------------------------------+
+| repository                                    | text *(optional)*  | If present, overrides the default repository URL.           |
 +------------------+----------------------------+--------------------+-------------------------------------------------------------+
 | checksum         | type                       | text *(enum)*      | The algorithm for the checksum. Only SHA-1 (:code:`sha1`)   |
 | *(optional)*     |                            |                    | and MD5 (:code:`md5`) are supported.                        |
