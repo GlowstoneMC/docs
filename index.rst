@@ -24,5 +24,5 @@ Table of Contents
 .. toctree::
     :maxdepth: 2
 
-    Getting_Started/index
     Why_Glowstone/index
+    Getting_Started/index
