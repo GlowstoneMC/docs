@@ -2,3 +2,40 @@
 .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: normal;
 }
+
+/* Glowstone theme styling */
+.wy-side-nav-search {
+    background-color: #e8970b;
+}
+
+.wy-side-nav-search input[type="text"] {
+    border-color: #c58517;
+}
+
+.wy-side-nav-search > div.version {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a {
+    font-size: 0;
+    height: 40px;
+    width: 160px;
+    display: inline-block;
+    background-image: url("glowstone-logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 3px;
+    margin-bottom: 15px;
+}
+
+.wy-side-nav-search > a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: url("glowstone-logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 3px;
+}
+
+.wy-nav-top {
+    background-color: #e8970b;
+}
