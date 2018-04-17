@@ -255,19 +255,6 @@ For advanced world configuration, a plugin such as Multiverse may be appropriate
 | disable-generation             | true/false        | false                          | Disables world generation.                                  |
 +--------------------------------+-------------------+--------------------------------+-------------------------------------------------------------+
 
-database
-========
-
-These settings are used to control the database engine used by some plugins.
-Glowstone includes MySQL/SQLite by default.
-
-.. note::
-
-    Database settings aren't used by Glowstone, they must be used by plugins
-    to be of use.
-
-    These settings exist because other platforms have them in their configuration files.
-
 
 libraries
 =========
