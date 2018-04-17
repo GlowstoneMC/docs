@@ -99,7 +99,11 @@ Settings for in-game features.
 creatures
 =========
 
-:todo: document this
+Used to control mob spawn limits.
+
+.. note::
+
+    Creature settings are not currently implemented, and are therefore not documented.
 
 
 folders
@@ -254,7 +258,16 @@ For advanced world configuration, a plugin such as Multiverse may be appropriate
 database
 ========
 
-:todo: document this
+These settings are used to control the database engine used by some plugins.
+Glowstone includes MySQL/SQLite by default.
+
+.. note::
+
+    Database settings aren't used by Glowstone, they must be used by plugins
+    to be of use.
+
+    These settings exist because other platforms have them in their configuration files.
+
 
 libraries
 =========
