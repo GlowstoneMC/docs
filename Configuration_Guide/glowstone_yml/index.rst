@@ -103,7 +103,15 @@ Used to control mob spawn limits.
 
 .. note::
 
-    Creature settings are not currently implemented, and are therefore not documented.
+    Certain creature settings are not currently implemented, and are therefore not documented.
+
++--------------------------------+-------------------+--------------------------------+-------------------------------------------------------------+
+| Key                            | Type              | Default                        | Description                                                 |
++==========+=====================+===================+================================+=============================================================+
+|          | monsters            | true/false        | true                           | Whether monsters can spawn naturally.                       |
+| enable   +---------------------+-------------------+--------------------------------+-------------------------------------------------------------+
+|          | animals             | true/false        | true                           | Whether animals can spawn naturally.                        |
++----------+---------------------+-------------------+--------------------------------+-------------------------------------------------------------+
 
 
 folders
