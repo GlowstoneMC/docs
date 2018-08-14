@@ -24,9 +24,9 @@ copyright = '2018, The Glowstone Project'
 author = 'The Glowstone Project'
 
 # The short X.Y version
-version = '2018.4'
+version = '2018.8'
 # The full version, including alpha/beta/rc tags
-release = '2018.4.0'
+release = '2018.8.0'
 
 
 # -- General configuration ---------------------------------------------------
