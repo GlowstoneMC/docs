@@ -62,4 +62,5 @@ If you need help with something or if the documentation can't answer your questi
     :caption: Development
     :titlesonly:
 
+    Development/Docs/index.rst
     Development/Design_Documents/index
