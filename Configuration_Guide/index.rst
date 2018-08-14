@@ -12,10 +12,3 @@ After modifying your configuration files, you will need to restart your server t
     :code:`--generate-config` command-line argument.
 
     Simply add the argument at the end of the :code:`java [...] -jar glowstone.jar` line inside your startup script.
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents
-    :titlesonly:
-
-    glowstone_yml/index

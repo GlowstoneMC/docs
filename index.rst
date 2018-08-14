@@ -18,14 +18,48 @@ If you need help with something or if the documentation can't answer your questi
 .. _our website: https://glowstone.net
 .. _our Discord server: https://discord.gg/TFJqhsC
 
-Table of Contents
-==================
+.. toctree::
+    :maxdepth: 1
+    :caption: About
+    :titlesonly:
+
+    About/why_glowstone
+
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
+    :caption: Getting Started
+    :titlesonly:
 
-    Why_Glowstone/index
-    Getting_Started/index
-    FAQ/index
+    Getting_Started/install_java
+    Getting_Started/install_glowstone
+    Getting_Started/first_run
+    Getting_Started/connect
+    Getting_Started/basic_admin
+    Getting_Started/plugins
+    Getting_Started/additional_help
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Configuration Guide
+    :titlesonly:
+
     Configuration_Guide/index
-    Development/index
+    Configuration_Guide/glowstone_yml
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Frequently Asked Questions
+    :titlesonly:
+
+    FAQ/errors
+    FAQ/frequently_asked_features
+    FAQ/inconsistencies
+    FAQ/legal
+
+.. toctree::
+    :maxdepth: 3
+    :caption: Development
+    :titlesonly:
+
+    Development/Design_Documents/index

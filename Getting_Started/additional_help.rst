@@ -1,20 +1,5 @@
-Getting Started
-#######################
-
-Installing Glowstone is as easy as installing any other server software.
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents
-    :titlesonly:
-
-    install_java
-    install_glowstone
-    first_run
-    connect
-    basic_admin
-    plugins
-
+Additional Help
+###############
 
 If you have any trouble setting up, we would be happy to help you on the forums_
 or Discord_.
