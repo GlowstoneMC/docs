@@ -1,6 +1,9 @@
 1.13 Update
 ###########
 
+.. contents::
+
+
 Block Format
 ------------
 
@@ -82,6 +85,80 @@ as many longs as necessary to store all 4096 identically-sized indices.
 Network Representation
 ======================
 
-The chunk data is sent to the client by using the state numerical IDs.
+Similarly to the Disk Storage, a palette can be used to save bandwidth.
+The palette is a list of integers (VarInt) -- the numerical IDs of each state used in the chunk.
 
-// TODO: Document more!
+Numerical IDs are incremental and start at 0 (``minecraft:air``). Contrary to previous Minecraft
+versions, these IDs are not incremental per-type, but rather per-state.
+
+For example, if type A has 2 properties with 2 possible values each, type A has 4 possible states.
+If the first A state has ID 10, type B's states will start at 14.
+
+**Encoding/Decoding Example**:
+
+.. code-block:: js
+
+    "minecraft:A": {
+      "properties": {
+        "foo": [
+          "true",
+          "false"
+        ],
+        "bar": [
+          "true",
+          "false",
+          "maybe"
+        ]
+      },
+      "states": [
+        {
+          "properties": {
+            "foo": "true",
+            "bar": "true"
+          },
+          "id": 10
+        },
+        {
+          "properties": {
+            "foo": "true",
+            "bar": "false"
+          },
+          "id": 11
+        },
+        {
+          "properties": {
+            "foo": "true",
+            "bar": "maybe"
+          },
+          "id": 12
+        },
+        {
+          "properties": {
+            "foo": "false",
+            "bar": "true"
+          },
+          "id": 13
+        },
+        [...]
+      ]
+    }
+
+Knowing the ID of the first state of a type, it is possible to encode and decode state properties
+of a state from its index relative to the type's base ID.
+
+Let's say we want to decode ID **12** back to the state's property map:
+
+1. From a pre-calculated map, we can determine the base ID corresponding to 12 to be **10**.
+
+2. The relative ID of the state is **2** (12-10). The binary representation of 2 is ``0010``.
+
+3. The properties are decoded in reverse:
+
+   i.  The ``bar`` property has 3 possible values; the largest index, 2, takes 2 bits.
+       From right to left, the next 2 bits are read (``10``). Therefore, the value of the ``bar``
+       property has index 2, which is "maybe".
+   ii. The ``foo`` property has 2 possible values; the largest index, 1, takes 1 bit.
+       From right to left, the next bit is read (``0``). Therefore, the value of the ``foo``
+       property has index 0, which is "true".
+
+Encoding is the same operation but in reverse; the base ID is added to the relative state ID (bit mask).
