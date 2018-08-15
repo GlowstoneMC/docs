@@ -1,4 +1,87 @@
 1.13 Update
 ###########
 
-Coming soon!
+Block Format
+------------
+
+"Block Data" refers to information about a certain block. The two components of Block Data are
+its **type** (e.g. air, grass, acacia door, etc.) and its **state**. Each type has a set
+of **properties**. Each combination of all the type's properties
+is a state, and has its own numerical ID.
+
+Example:
+
+.. code-block:: js
+
+    "minecraft:light_gray_bed": {
+        "properties": {
+          "facing": [   // Possible values for the "facing" property
+            "north",
+            "south",
+            "west",
+            "east"
+          ],
+          "occupied": [ // Possible values for the "occupied" property
+            "true",
+            "false"
+          ],
+          "part": [     // Possible values for the "part" property
+            "head",
+            "foot"
+          ]
+        },
+        "states": [
+          {
+            "properties": {
+              "facing": "north",
+              "occupied": "true",
+              "part": "head"
+            },
+            "id": 876
+          },
+          {
+            "properties": {
+              "facing": "north",
+              "occupied": "true",
+              "part": "foot"
+            },
+            "id": 877
+          },
+          [...]
+        ]
+      }
+    }
+
+
+There are 2 ways to encode Block Data:
+
+* Numerical IDs (type base ID + state bit mask)
+* Map (type's  ``minecraft:...`` key + map of string:string for state)
+
+
+On-Disk Block Storage
+=====================
+
+Each chunk section (16x16x16 blocks) has its own "Palette".
+A Palette is a list of Block Data maps (see above). In NBT format, the ``Palette`` tag is a list of compounds.
+
+This is an example palette for a section with 19 different block states:
+
+.. image:: palette_screenshot.png
+    :scale: 50 %
+
+The ``BlockStates`` tag is a Long Array. Each block is represented by a Palette index, corresponding to the order
+of the section's Palette tag. All indices have the same bit size, corresponding to the size required
+for the largest index (``ceil(log(n-1)/log(2))``, where ``n`` is the number of states in the Palette), with a minimum
+of 4 bits per index.
+
+The number of longs in the tag may grow from 256 longs (16 indices per long) to
+as many longs as necessary to store all 4096 identically-sized indices.
+
+
+Network Representation
+======================
+
+The chunk data is sent to the client by using the state numerical IDs.
+
+// TODO: Document more!
