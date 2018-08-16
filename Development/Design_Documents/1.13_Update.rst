@@ -94,7 +94,7 @@ versions, these IDs are not incremental per-type, but rather per-state.
 For example, if type A has 2 properties with 2 possible values each, type A has 4 possible states.
 If the first A state has ID 10, type B's states will start at 14.
 
-**Encoding/Decoding Example**:
+**Encoding Example**:
 
 .. code-block:: js
 
@@ -143,22 +143,26 @@ If the first A state has ID 10, type B's states will start at 14.
       ]
     }
 
-Knowing the ID of the first state of a type, it is possible to encode and decode state properties
-of a state from its index relative to the type's base ID.
+Knowing the ID of the first state of a type, it is possible to encode a state from the values
+of the properties.
 
-Let's say we want to decode ID **12** back to the state's property map:
+Let's say we want to encode ``minecraft:A[foo=true,bar=maybe]`` to the state's ID (12):
 
-1. From a pre-calculated map, we can determine the base ID corresponding to 12 to be **10**.
+1. From a pre-calculated map, we can determine the base ID corresponding to ``minecraft:A`` to be **10**.
 
-2. The relative ID of the state is **2** (12-10). The binary representation of 2 is ``0010``.
+2. The properties are encoded:
 
-3. The properties are decoded in reverse:
+   i.   The ``foo`` property has 2 possible values; the largest index, 1, takes 1 bit.
+        The index of the value ("true", 0) is written to the first bit.
 
-   i.  The ``bar`` property has 3 possible values; the largest index, 2, takes 2 bits.
-       From right to left, the next 2 bits are read (``10``). Therefore, the value of the ``bar``
-       property has index 2, which is "maybe".
-   ii. The ``foo`` property has 2 possible values; the largest index, 1, takes 1 bit.
-       From right to left, the next bit is read (``0``). Therefore, the value of the ``foo``
-       property has index 0, which is "true".
+        Current bits: ``0``
+   ii.  The ``bar`` property has 3 possible values; the largest index, 2, takes 2 bits.
+        Since there is already a value on the lowest bit, the bits are shift by the
+        size required for the current property (2).
+        The index of the value ("maybe", 2) is then written on the two last bits.
 
-Encoding is the same operation but in reverse; the base ID is added to the relative state ID (bit mask).
+        Current bits: ``010``
+   iii. The result is then **10 + 0b010 = 12**.
+
+.. note::
+    Decoding numerical IDs is not necessary on the server-side in 1.13.
