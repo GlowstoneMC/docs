@@ -75,7 +75,7 @@ This is an example palette for a section with 19 different block states:
 
 The ``BlockStates`` tag is a Long Array. Each block is represented by a Palette index, corresponding to the order
 of the section's Palette tag. All indices have the same bit size, corresponding to the size required
-for the largest index (``ceil(log(n-1)/log(2))``, where ``n`` is the number of states in the Palette), with a minimum
+for the largest index (``ceil(log(n)/log(2))``, where ``n`` is the number of states in the Palette), with a minimum
 of 4 bits per index.
 
 The number of longs in the tag may grow from 256 longs (16 indices per long) to
@@ -150,19 +150,35 @@ Let's say we want to encode ``minecraft:A[foo=true,bar=maybe]`` to the state's I
 
 1. From a pre-calculated map, we can determine the base ID corresponding to ``minecraft:A`` to be **10**.
 
-2. The properties are encoded:
+2. The state is encoded using a recursive algorithm:
 
-   i.   The ``foo`` property has 2 possible values; the largest index, 1, takes 1 bit.
-        The index of the value ("true", 0) is written to the first bit.
+   i.   A temporary value, *P*, is set to 0. This will be the final result once the
+        algorithm is complete.
 
-        Current bits: ``0``
-   ii.  The ``bar`` property has 3 possible values; the largest index, 2, takes 2 bits.
-        Since there is already a value on the lowest bit, the bits are shift by the
-        size required for the current property (2).
-        The index of the value ("maybe", 2) is then written on the two last bits.
+        .. code-block:: none
 
-        Current bits: ``010``
-   iii. The result is then **10 + 0b010 = 12**.
+            P := 0
+
+
+   ii.  The ``foo`` property has 2 possible values (len\ :sub:`foo` = 2).
+        The index of the value ("true") is *i = 0*. *P* is set to the result of the following formula:
+
+        .. code-block:: none
+
+            P = i + len * P
+
+   iii. Repeat the previous step for each property.
+        The result for the given example will be *P = 2*:
+
+        .. code-block:: none
+
+            P = 2 + (0 + 2 * 0) * 3 = 2
+
+   iv.  The result is then *base ID + P* = **10 + 2 = 12**.
+
+
+   A sample implementation of this algorithm can be found here (JavaScript):
+   https://gist.github.com/momothereal/27442d5cf3b5d9ceee679b606facdfe4
 
 .. note::
     Decoding numerical IDs is not necessary on the server-side in 1.13.
