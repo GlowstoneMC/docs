@@ -13,4 +13,4 @@ As you would with a CraftBukkit server, place the plugin :code:`.jar` files insi
 
 .. _Bukkit: http://dev.bukkit.org/bukkit-plugins/
 .. _Spigot: https://www.spigotmc.org/resources/categories/bukkit.4/
-.. _Paper: https://aquifermc.org/resources/categories/server-plugins.2/
+.. _Paper: hhttps://papermc.io/forums/c/plugin-releases/paper
