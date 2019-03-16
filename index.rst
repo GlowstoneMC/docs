@@ -13,7 +13,7 @@ If you need help with something or if the documentation can't answer your questi
 .. _Minecraft: https://minecraft.net
 .. _Bukkit: https://bukkit.org
 .. _Spigot: https://spigotmc.org
-.. _Paper: https://github.com/PaperMC/Paper
+.. _Paper: https://papermc.io/
 
 .. _our website: https://glowstone.net
 .. _our Discord server: https://discord.gg/TFJqhsC
