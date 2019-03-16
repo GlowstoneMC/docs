@@ -1,9 +1,8 @@
 Install Java
 ============
 
-Install `Oracle Java 8`_ (recommended).
-If you're running a Linux distro, look into installing Oracle Java through your package manager before using these downloads.
-But, if you really don't want Oracle Java, you can use OpenJDK_.
+Install `OpenJDK 8`_ (recommended).
+If you're running a Linux distro, look into installing OpenJDK through your package manager before using these downloads.
 
 .. note::
 
@@ -30,6 +29,5 @@ You should see something like :code:`java version "1.8.0_121"` at the top. As lo
     For more details, see `this guide`_.
 
 
-.. _Oracle Java 8: http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 .. _OpenJDK: http://openjdk.java.net/install/
 .. _this guide: https://gist.github.com/johan/10590467
