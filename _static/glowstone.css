@@ -43,3 +43,7 @@
 .wy-menu-vertical a:active {
     background-color: #e8970b;
 }
+
+.wy-menu-vertical p.caption {
+    color: #e8970b;
+}
