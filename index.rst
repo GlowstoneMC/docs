@@ -6,7 +6,7 @@ Welcome to the Glowstone documentation!
 Glowstone is a fast, customizable and compatible open source Minecraft_ server written in Java that supports plugins for Bukkit_, as continued by Spigot_ and Paper_.
 Glowstone's code is completely from scratch, so some Bukkit plugins that use Mojang code will not work, though.
 
-This documentation introduces Glowstone for server owners and developers. If you are someone that plays on a server powered by Glowstone, you may find `our website`_ more interesting.
+This documentation introduces Glowstone mostly for server owners. If you are someone that plays on a server powered by Glowstone, you may find `our website`_ more interesting. If you are a developer, you can find more contributing instructions on `our wiki`_.
 
 If you need help with something or if the documentation can't answer your question, you can chat with us via `our Discord server`_.
 
@@ -16,6 +16,7 @@ If you need help with something or if the documentation can't answer your questi
 .. _Paper: https://papermc.io/
 
 .. _our website: https://glowstone.net
+.. _our wiki: https://github.com/GlowstoneMC/Glowstone/wiki
 .. _our Discord server: https://discord.gg/TFJqhsC
 
 .. toctree::
